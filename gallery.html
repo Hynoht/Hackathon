@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/head.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>Hacka-malagasy</title>
+</head>
+<body>
+	<div class="contents">
+		<div class="content-3d">
+			<span style="--i:1;" class="alasora"><img src="image/alasora.jpg" alt="alasora" srcset=""></span>
+			<span style="--i:2;" class="alasora"><img title="alasora" src="image/ambohdratrimo.jpg" alt="ambohidratrimo" srcset=""></span>
+			<span style="--i:3;" class="alasora"><img src="image/ambohimalaza.webp" alt="ambohimalaza" srcset=""></span>
+			<span style="--i:4;" class="alasora"><img src="image/ambohimanambola.jpg" alt="ambohimanambola" srcset=""></span>
+			<span style="--i:5;" class="alasora"><img src="image/ambohimanga.jpg" alt="ambohimanga" srcset=""></span>
+			<span style="--i:6;" class="alasora"><img src="image/ambohitrabiby.jpg" alt="ambohitrabiby" srcset=""></span>
+			<span style="--i:7;" class="alasora"><img src="image/ampandrana.jpg" alt="ampandrana" srcset=""></span>
+			<span style="--i:8;" class="alasora"><img src="image/antongona.jpg" alt="antongona" srcset=""></span>
+			<span style="--i:9;" class="alasora"><img src="image/antsahadita.jpg" alt="antsahadita" srcset=""></span>
+			<span style="--i:10;" class="alasora"><img src="image/ilafy.jpg" alt="ilafy" srcset=""></span>
+			<span style="--i:11;" class="alasora"><img src="image/kaloy.jpg" alt="kaloy" srcset=""></span>
+			<span style="--i:12;" class="alasora"><img src="image/analamanga.jpg" alt="analamanga" srcset=""></span>
+		</div>
+	</div>
+	<div class="hidding" style="display: none;">
+		<div class="elmnt" id="alasora">
+			<div class="exit">
+				<i class="fa-solid fa-x"></i>
+			</div>
+			<div class="img-class 1">
+				<img src="image/alasora.jpg" alt="alasora" srcset="">
+			</div>
+			<span class="txt">
+				<strong>La colline sacrée d'Alasora </strong>
+			</span>
+			<p class="descrit">
+				Le village d'Alasora est est le berceau de la culture merina.
+				C'est l'une des plus anciennes villages du royaume.
+				Alasora fut la seigneurie du roi Andrianjaka mais vers le XVIIIè siècle,
+				 Andrianampoinimerina mit fin à son règne et y installa son épouse Ramanantenasoa.
+			</p>
+		</div>
+	</div>
+	<script>
+		let span = document.querySelector(".content-3d");
+		let spans = document.querySelectorAll("span");
+		let exit = document.querySelector(".exit");
+		let card = document.querySelector(".elmnt");
+		let hidden = document.querySelector(".hidding");
+
+		exit.onclick = function () {
+			card.style.visibility = "hidden";
+			hidden.style.display = "none";
+		}
+		spans.forEach ((element) =>
+			element.onclick = function () {
+				let id = document.querySelector("#"+element.className);
+				id.style.visibility = "visible";
+				hidden.style.display = "flex";
+				console.log(id)
+			}
+		);
+
+		let counter = 0;
+		function count () {
+			span.style.transform = "perspective(1000px) rotateY("+ counter +"deg)";
+			if (counter == 360)
+				counter = 0;
+			counter++;
+		}
+		window.onload = function () {
+			setInterval(count, 90);
+		}
+
+	</script>
+</body>
+</html>
