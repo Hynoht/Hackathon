@@ -17,10 +17,10 @@
             <img id="bouton-masquer" class="close-button" src="./utils/close-button.png" alt="Bouton Masquer">
             <nav id="navbar-to-show">
                 <ul class="container-list">
-                    <li class="menu-list">Tantara</li>
-                    <li class="menu-list">Toerana<br>manan-tantara</li>
-                    <li class="menu-list">Tononkira</li>
-                    <li class="menu-list">About</li>
+                    <li class="menu-list cl1">Tantara</li>
+                    <li class="menu-list cl2">Toerana<br>manan-tantara</li>
+                    <li class="menu-list cl3">Tononkira</li>
+                    <li class="menu-list cl4">About</li>
                 </ul>
             </nav>
         </div>
@@ -51,6 +51,9 @@
         let menu1 = document.querySelector(".card-1");
         let menu2 = document.querySelector(".card-2");
         let menu3 = document.querySelector(".card-3");
+        let cl1 = document.querySelector(".cl1");
+        let cl2 = document.querySelector(".cl2");
+        let cl3 = document.querySelector(".cl3");
 
         menu1.onclick = function () {
             window.location.href = "gallery.html";
@@ -59,6 +62,16 @@
             window.location.href = "toerana.html";
         }
         menu3.onclick = function () {
+            window.location.href = "html/diver.html";
+        }
+
+        cl1.onclick = function () {
+            window.location.href = "gallery.html";
+        }
+        cl2.onclick = function () {
+            window.location.href = "toerana.html";
+        }
+        cl3.onclick = function () {
             window.location.href = "html/diver.html";
         }
    </script>
