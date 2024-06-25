@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Gujarati:wght@100..800&display=swap" rel="stylesheet">
+    <script src="./scrypt.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img id="bouton-afficher" class="hamburger-menu" src="./utils/Frame 8.png" alt="Bouton Afficher">
+            <img id="bouton-masquer" class="close-button" src="./utils/close-button.png" alt="Bouton Masquer">
+            <nav id="navbar-to-show">
+                <ul class="container-list">
+                    <li class="menu-list">Tantara</li>
+                    <li class="menu-list">Toerana<br>manan-tantara</li>
+                    <li class="menu-list">Tononkira</li>
+                    <li class="menu-list">About</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container-flex-col">
+            <div class="container-card">
+                <div class="card card-1">
+                        <img class="card-img" src="./utils/image0_0.jpg">
+                        <div class="container-title">
+                            <h1 class="card-title">Tantara</h1>
+                        </div>
+                </div>
+                <div class="card card-2">
+                    <img class="card-img img-2" src="./utils/paysage.jpg">
+                    <div class="container-title">
+                        <h1 class="card-title">Toerana<br>mana-tantara</h1>
+                    </div>
+                </div>
+                <div class="card card-3">
+                    <img class="card-img img-3" src="./utils/Radama_I.jpg">
+                    <div class="container-title">
+                        <h1 class="card-title">Tononkira</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+   <script>
+        let menu1 = document.querySelector(".card-1");
+        let menu2 = document.querySelector(".card-2");
+        let menu3 = document.querySelector(".card-3");
+
+        menu1.onclick = function () {
+            window.location.href = "gallery.html";
+        }
+        menu2.onclick = function () {
+            window.location.href = "toerana.html";
+        }
+        menu3.onclick = function () {
+            window.location.href = "html/diver.html";
+        }
+   </script>
+</body>
+</html>
