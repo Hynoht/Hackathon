@@ -50,19 +50,6 @@ body {
 	color: #17e721;
 }
 
-
-/*.txt {
-	font-family: "Russo One", sans-serif;
-    font-style: normal;
-    font-size: 10rem;
-    background-image: url(rova.jpg);
-    background-size: 56rem;
-    background-position: 130px -130px;
-    background-clip: text;
-    color: transparent;
-    user-select: none;
-}*/
-
 .foot {
 	display: flex;
 	justify-content: center;
@@ -132,7 +119,7 @@ body {
 	width: 100%;
 	height: 100%;
 	background: #fff;
-	transform: rotateY(calc(var(--i) * 45deg)) translateZ(280px) rotateX(0deg);
+	transform: rotateY(calc(var(--i) * 50deg)) translateZ(280px) rotateX(0deg);
 	-webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), #0002);
 }
 
@@ -165,8 +152,36 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	border-radius: 5px;
+	border-radius: 20px;
 	padding: 10px 10px;
+	animation: show 0.12s;
+}
+
+@keyframes show {
+	0% {
+		width: 0px;
+		height: 0px;
+	}
+	20% {
+		width: 80px;
+		height: 80px;
+	}
+	40% {
+		width: 160px;
+		height: 160px;
+	}
+	60% {
+		width: 240px;
+		height: 240px;
+	}
+	80%{
+		width: 320px;
+		height: 320px;
+	}
+	100% {
+		width: 400px;
+		height: 400px;
+	}
 }
 
 .img-class {
@@ -180,24 +195,40 @@ body {
 .img-class img {
 	width: inherit;
 	height: inherit;
-	object-fit: cover;
+	object-fit: contain;
 }
 
 .descrit {
-	
+	overflow: hidden;
+	overflow-y: auto;
+	max-height: 200px;
 	margin: 25px 10px 10px 10px;
 	font-size: 14px;
 	font-family:'Courier New', Courier, monospace;
+}
+
+.descrit::-webkit-scrollbar {
+	width: 5px;
+	height: 10px;
+}
+
+.descrit::-webkit-scrollbar-thumb {
+	background-color: #ccc;
+	border-radius: 5px;
+}
+
+.descrit::-webkit-scrollbar-track {
+	background: transparent;
 }
 
 .exit {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: rgb(53, 53, 53);
+	background: #202020;
 	width: 40px;
 	height: 40px;
-	margin: 10px;
+	margin: 15px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -207,12 +238,122 @@ body {
 	cursor: pointer;
 }
 
+.txt {
+	font-size: 1.2rem;
+}
+
 #alasora {
 	visibility: hidden;
 }
 
 .exit:hover {
 	background: rgb(68, 68, 68);
+}
+
+.exit i{
+    text-decoration: none;
+	background: linear-gradient(to bottom left, #fabfbf, #c6fcc6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold; 
+}
+
+.home {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 10px;
+	padding: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: #202020;
+	font-size: 22px;
+}
+
+/*.home:hover::after{
+	content: "Menu";
+	position: absolute;
+	top: 55px;
+	left: -5px;
+	border-radius: 5px;
+	background: #202020;
+	width: 60px;
+	height: 25px;
+	text-align: center;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2px;
+	font-size: 16px;
+	font-family: monospace;
+	color: #b6b6b6;
+}*/
+
+.home .list {
+	display: none;
+}
+
+.home .list.afficher {
+	display: block;
+	position: absolute;
+	width: 250px;
+	height: 150px;
+	top: 0;
+	left: -10px;
+	transform: translateY(45px);
+	padding-bottom: 15px;
+	animation: menu 1.5s;
+}
+
+@keyframes menu {
+	from {
+		transform: translateY(40px);
+		width: 0px;
+		height: 0px;
+		overflow: hidden;
+	}
+}
+
+.home .list ul {
+	width: 100%;
+	height: 100%;
+	list-style: none;
+	margin-left : -30px;
+}
+
+.home .list ul a {
+	display: block;
+	margin: 10px 0 10px 0;
+	width: 215px;
+	height: 30px;
+	padding: 10px 0 0 10px;
+	text-align:justify;
+	background: #202020;
+	border-radius: 10px;
+	text-decoration: none;
+	color: #b8b8b8;
+	user-select: none;
+	cursor: pointer;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+.home .href,
+.xx{
+    text-decoration: none;
+	background: linear-gradient(to bottom left, #fabfbf, #c6fcc6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold; 
+	cursor: pointer;
 }
 
 @media (max-width: 1024px) {
@@ -236,7 +377,7 @@ body {
 		font-size: 12px;
 	}
 	.txt {
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 	}
 	.descrit {
 		font-size: 14px;

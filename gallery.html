@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="image/icon.png">
 	<link rel="stylesheet" href="css/head.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,71 +13,126 @@
 </head>
 <body>
 	<div class="contents">
+		<div class="home">
+			<div style="display: block;">
+				<div class="href"><i class="fa-solid fa-house"></i></i></div>
+				<div class="xx" style="display: none;"><i class="fa-solid fa-x"></i></i></div>
+			</div>
+			<div class="list">
+				<ul>
+					<a href="index.html"><li>Tongasoa</li></a>
+					<a href="http://"><li>Tantara</li></a>
+					<a href="http://"><li>Toerana manatantara</li></a>
+					<a href="http://"><li>Tonon-kira</li></a>
+				</ul>
+			</div>
+		</div>
 		<div class="content-3d">
-			<span style="--i:1;" class="alasora"><img src="image/alasora.jpg" alt="alasora" srcset=""></span>
-			<span style="--i:2;" class="alasora"><img title="alasora" src="image/ambohdratrimo.jpg" alt="ambohidratrimo" srcset=""></span>
-			<span style="--i:3;" class="alasora"><img src="image/ambohimalaza.webp" alt="ambohimalaza" srcset=""></span>
-			<span style="--i:4;" class="alasora"><img src="image/ambohimanambola.jpg" alt="ambohimanambola" srcset=""></span>
-			<span style="--i:5;" class="alasora"><img src="image/ambohimanga.jpg" alt="ambohimanga" srcset=""></span>
-			<span style="--i:6;" class="alasora"><img src="image/ambohitrabiby.jpg" alt="ambohitrabiby" srcset=""></span>
-			<span style="--i:7;" class="alasora"><img src="image/ampandrana.jpg" alt="ampandrana" srcset=""></span>
-			<span style="--i:8;" class="alasora"><img src="image/antongona.jpg" alt="antongona" srcset=""></span>
-			<span style="--i:9;" class="alasora"><img src="image/antsahadita.jpg" alt="antsahadita" srcset=""></span>
-			<span style="--i:10;" class="alasora"><img src="image/ilafy.jpg" alt="ilafy" srcset=""></span>
-			<span style="--i:11;" class="alasora"><img src="image/kaloy.jpg" alt="kaloy" srcset=""></span>
-			<span style="--i:12;" class="alasora"><img src="image/analamanga.jpg" alt="analamanga" srcset=""></span>
+			<span style="--i:1;" class="andrianampoinimerina">
+				<img src="image/andrianampoinimerina.jpeg" alt="andrianampoinimerina" srcset="">
+			</span>
+			<span style="--i:2;" class="radamaI">
+				<img src="image/radamaI.jpeg" alt="radamaI" srcset="">
+			</span>
+			<span style="--i:4;" class="ranavalonaI">
+				<img src="image/ranavalonaI.jpeg" alt="ranavalonaI" srcset="">
+			</span>
+			<span style="--i:3;" class="radamaII">
+				<img src="image/radamaII.jpeg" alt="radamaII" srcset="">
+			</span>
+			<span style="--i:7;" class="rasoherina">
+				<img src="image/rasoherina.jpeg" alt="rasoherina" srcset="">
+			</span>
+			<span style="--i:5;" class="ranavalonaII">
+				<img src="image/ranavalonaII.jpeg" alt="ranavalonaII" srcset="">
+			</span>
+			<span style="--i:6;" class="ranavalonaIII">
+				<img src="image/ranavalonaIII.jpeg" alt="ranavalonaIII" srcset="">
+			</span>
 		</div>
 	</div>
 	<div class="hidding" style="display: none;">
-		<div class="elmnt" id="alasora">
-			<div class="exit">
-				<i class="fa-solid fa-x"></i>
-			</div>
-			<div class="img-class 1">
-				<img src="image/alasora.jpg" alt="alasora" srcset="">
-			</div>
-			<span class="txt">
-				<strong>La colline sacrée d'Alasora </strong>
-			</span>
-			<p class="descrit">
-				Le village d'Alasora est est le berceau de la culture merina.
-				C'est l'une des plus anciennes villages du royaume.
-				Alasora fut la seigneurie du roi Andrianjaka mais vers le XVIIIè siècle,
-				 Andrianampoinimerina mit fin à son règne et y installa son épouse Ramanantenasoa.
-			</p>
+		<div class="exit">
+			<i class="fa-solid fa-x"></i>
 		</div>
 	</div>
 	<script>
 		let span = document.querySelector(".content-3d");
 		let spans = document.querySelectorAll("span");
-		let exit = document.querySelector(".exit");
 		let card = document.querySelector(".elmnt");
 		let hidden = document.querySelector(".hidding");
+		let exit = document.querySelector(".exit");
+		let menu = document.querySelector(".href");
+		let list = document.querySelector(".list");
+		let xx = document.querySelector(".xx");
 
-		exit.onclick = function () {
-			card.style.visibility = "hidden";
-			hidden.style.display = "none";
-		}
+		let content = function (nom, birth, regne, descrit) {
+			hidden.innerHTML = 
+			`
+				<div class="elmnt">
+					<div class="exit">
+						<i class="fa-solid fa-x"></i>
+					</div>
+					<div class="img-class 1">
+						<img src="image/${nom}.jpeg" alt="alasora" srcset="">
+					</div>
+					<span class="txt">
+						<strong>` + nom + `</strong> (` + birth +`)
+					</span>
+					<p class="descrit">
+						` + descrit + `
+					</p>
+				</div>
+				`;
+		};
+
+		
 		spans.forEach ((element) =>
-			element.onclick = function () {
-				let id = document.querySelector("#"+element.className);
-				id.style.visibility = "visible";
-				hidden.style.display = "flex";
-				console.log(id)
+		element.onclick = function () {
+			let name = element.className;
+			hidden.style.display = "flex";
+			fetch('css/list.json')
+			.then(response => response.json())
+			.then(data => {
+				content(name, data[name].birth, data[name].regne, data[name].descrit);
+				let exit = document.querySelector(".exit");
+				let hiddens = document.querySelector(".hidding");
+				let cards = document.querySelector(".elmnt");
+			
+				exit.onclick =  function () {
+					cards.style.visibility = "hidden";
+					hiddens.style.display = "none";
+				}
+			})
+			.catch(error => {
+				console.error("Erreur lors du chargement du JSON :", error);
+				});
 			}
-		);
-
-		let counter = 0;
-		function count () {
-			span.style.transform = "perspective(1000px) rotateY("+ counter +"deg)";
-			if (counter == 360)
+			);
+			
+			let counter = 0;
+			function count () {
+				span.style.transform = "perspective(1000px) rotateY("+ counter +"deg)";
+				if (counter == 360)
 				counter = 0;
 			counter++;
 		}
+
 		window.onload = function () {
 			setInterval(count, 90);
 		}
 
+		menu.onclick = function () {
+			list.classList.add("afficher");
+			xx.style.display = "block";
+			menu.style.display = "none";
+			xx.onclick = function () {
+				xx.style.display = "none";
+				menu.style.display = "block";
+				list.classList.remove("afficher");
+			}
+		}
+		
 	</script>
 </body>
 </html>
