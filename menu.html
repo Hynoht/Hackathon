@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"> 
+	<link rel="icon" type="image/png" href="image/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anek+Gujarati:wght@100..800&display=swap" rel="stylesheet">
     <script src="./scrypt.js"></script>
-    <title>Document</title>
+    <title>Safidy</title>
 </head>
 <body>
     <div class="container">
@@ -17,6 +18,7 @@
             <img id="bouton-masquer" class="close-button" src="./utils/close-button.png" alt="Bouton Masquer">
             <nav id="navbar-to-show">
                 <ul class="container-list">
+                    <li class="menu-list cl">Tongasoa</li>
                     <li class="menu-list cl1">Tantara</li>
                     <li class="menu-list cl2">Toerana<br>manan-tantara</li>
                     <li class="menu-list cl3">Tononkira</li>
@@ -51,6 +53,7 @@
         let menu1 = document.querySelector(".card-1");
         let menu2 = document.querySelector(".card-2");
         let menu3 = document.querySelector(".card-3");
+        let cl = document.querySelector(".cl");
         let cl1 = document.querySelector(".cl1");
         let cl2 = document.querySelector(".cl2");
         let cl3 = document.querySelector(".cl3");
@@ -64,7 +67,9 @@
         menu3.onclick = function () {
             window.location.href = "html/diver.html";
         }
-
+        cl.onclick = function () {
+            window.location.href = "index.html";
+        }
         cl1.onclick = function () {
             window.location.href = "gallery.html";
         }
